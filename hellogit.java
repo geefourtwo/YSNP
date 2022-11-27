@@ -1,5 +1,5 @@
 class hellogit {
-    static void main{
+    static void main(){
         System.out.println("Hello git!");
     }
 }
