@@ -1,25 +1,27 @@
 import java.util.Scanner;
 public class Utils {
 
-    private Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
-    public int readInt(String prompt) {
-        System.out.println(prompt+": ");
-        return sc.nextInt();
+    static public int readInt(String prompt) {
+        System.out.print(prompt+": ");
+        int num = sc.nextInt();
+        sc.nextLine();
+        return num;
     }
 
-    public String readStr(String prompt) {
-        System.out.println(prompt+": ");
+    static public String readStr(String prompt) {
+        System.out.print(prompt+": ");
         return sc.nextLine();
     }
 
-    public char readChar(String prompt) {
-        System.out.println(prompt+": ");
-        return sc.next().charAt(0);
+    static public char readChar(String prompt) {
+        System.out.print(prompt+": ");
+        return sc.nextLine().charAt(0);
     }
 
-    public Password readPassword(String prompt, Passwords passwords) {
-        String passwordName = readStr(prompt+": ");
+    static public Password readPassword(String prompt, Passwords passwords) {
+        String passwordName = readStr(prompt);
         int size = passwords.getSize();
         Key key = new Key(size);
         Password password = new Password(passwordName, key, size);
