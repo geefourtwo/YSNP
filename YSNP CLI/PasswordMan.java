@@ -1,13 +1,12 @@
 public class PasswordMan {
 
     private Password password;
+    private Passwords passwords;
 
-    public static void main(String[] args){
-
+    public static void main(String[] args) {
         PasswordMan session = new PasswordMan();
         Passwords passwords = new Passwords();
-
-        System.out.println("Menu: (Add password/Delete password/View passwords/Exit)");
+        System.out.println("Menu: (Add password / Delete password / View passwords / Exit)");
         char choice = Utils.readChar("Choose (A/D/V/X)");
         while(choice!='X') {
 
@@ -19,20 +18,22 @@ public class PasswordMan {
                     break;
 
                 case 'D':
-                    session.password = Utils.readPassword("Enter the password to be deleted", passwords);
-                    passwords.deletePassword(session.password);
+                    int key = Utils.readInt("Enter the key of the password to be deleted");
+                    passwords.deletePassword(key);
+                    System.out.println("Password has been deleted");
                     break;
 
                 case 'V':
-                    passwords.toString();
+                    System.out.println("Your passwords: ");
+                    passwords.viewPasswrords();
                     break;
-                default:
-                    System.out.println("Invalid choice! Remember to use capital.");
+                
+                default: 
+                    System.out.println("Invalid choice! Try again");
                     break;
-
             }
 
-            System.out.println("Menu: (Add password/Delete password/View passwords/Exit)");
+            System.out.println("Menu: (Add password / Delete password / View passwords / Exit)");
             choice = Utils.readChar("Choose (A/D/V/X)");
         }
     }
