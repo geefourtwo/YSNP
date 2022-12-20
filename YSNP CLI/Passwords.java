@@ -3,10 +3,10 @@ import java.util.Enumeration;
 
 public class Passwords {
     
-    private Hashtable<Integer, Password> passwords;
+    private Hashtable<String, Password> passwords;
     
     public Passwords() {
-        this.passwords = new Hashtable<Integer, Password>();
+        this.passwords = new Hashtable<String, Password>();
     }
 
     public void addPassword(Password password) {
@@ -14,14 +14,14 @@ public class Passwords {
         passwords.put(password.getKey(), password);
     }
 
-    public void deletePassword(int key) {
+    public void deletePassword(String key) {
         passwords.remove(key);
     }
 
     public void viewPasswrords() {
         this.passwords.toString();
         Enumeration<Password> values = passwords.elements();
-        Enumeration<Integer> keys = passwords.keys();
+        Enumeration<String> keys = passwords.keys();
  
         while( values.hasMoreElements() ){
             System.out.println( keys.nextElement() + " " + values.nextElement() );

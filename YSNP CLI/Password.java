@@ -11,7 +11,7 @@ public class Password {
         this.size = size;
     }
 
-    public int getKey() {
+    public String getKey() {
         return this.key.getKey();
     }
 

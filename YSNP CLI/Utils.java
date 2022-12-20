@@ -24,7 +24,7 @@ public class Utils {
     public static Password readPassword(String prompt, Passwords passwords) {
         String passwordName = readStr(prompt);
         int size = passwords.getSize();
-        Key key = new Key(size);
+        Key key = new Key(passwordName);
         Password password = new Password(passwordName, key, size);
         return password;
     }

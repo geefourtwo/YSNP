@@ -18,13 +18,13 @@ public class PasswordMan {
                     break;
 
                 case 'D':
-                    int key = Utils.readInt("Enter the key of the password to be deleted");
+                    String key = Utils.readStr("Enter the key of the password to be deleted");
                     passwords.deletePassword(key);
                     System.out.println("Password has been deleted");
                     break;
 
                 case 'V':
-                    System.out.println("Your passwords: ");
+                    System.out.println("Your passwords (Encrypted and Decrypted): ");
                     passwords.viewPasswrords();
                     break;
                 
