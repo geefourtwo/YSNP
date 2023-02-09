@@ -10,7 +10,6 @@ public class Passwords {
     }
 
     public void addPassword(Password password) {
-
         passwords.put(password.getKey(), password);
     }
 
