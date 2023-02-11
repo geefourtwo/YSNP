@@ -2,9 +2,6 @@ from flask import render_template
 from app import app
 
 @app.route("/")
-def home():
-    return "Hello, World!"
+def index():
+    return render_template('index.html')
 
-@app.route("/hello/<name>")
-def hello(name):
-    return render_template('hello.html', name=name)
